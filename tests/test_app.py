@@ -26,7 +26,9 @@ def test_health_check(cliente_prueba):
     respuesta = cliente_prueba.get("/health")
 
     assert respuesta.status_code == 200
-    assert respuesta.get_json()["status"] == "ok"
+    cuerpo = respuesta.get_json()
+    assert cuerpo["status"] == "ok"
+    assert cuerpo["version"] == "1.1.0"
 
 
 def test_crear_cliente_valido(cliente_prueba):
