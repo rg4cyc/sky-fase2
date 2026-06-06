@@ -31,6 +31,7 @@ def health():
     return jsonify({
         "status": "ok",
         "service": "sky-fase2-api",
+        "version": "1.1.0",
     }), 200
 
 
